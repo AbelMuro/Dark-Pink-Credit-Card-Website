@@ -1,0 +1,45 @@
+.intro{
+    background-image: url("./images/dark pink background.png");
+    background-color: #232323;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+
+.creditCard{
+    object-fit: contain;
+    width: 400px;
+    position: absolute;
+    top: 230px;
+    left: 34%;
+    border-radius: 20px;
+}
+
+.benefitOne, .benefitTwo, .benefitThree{
+    position: absolute;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-size: 2.3rem;
+}
+
+.benefitOne{
+    color: white;
+    top: 400px;
+    left: 50px;
+}
+
+.benefitTwo{
+    width: 300px;
+    color:white;
+    top: 400px;
+    right: 50px;
+}
+
+.benefitThree{
+    color: white;
+    top: 100px;
+    left: 500px;
+}
