@@ -23,31 +23,31 @@
     position: absolute;
     z-index: 2;
     top: 230px;
-    left: 34%;
+    left: 40%;
     border-radius: 20px;
 }
 
-.benefitOne, .benefitTwo, .benefitThree{
-    position: absolute;
+.titleOne, .titleTwo, .titleThree{
+    color: white;
     font-family: 'Combo', cursive;
     font-size: 2.3rem;
 }
 
-.benefitOne{
-    color: white;
+.titleOne{
+    position: absolute;
     top: 400px;
     left: 50px;
 }
 
-.benefitTwo{
+.titleTwo{
+    position: absolute;
     width: 300px;
-    color:white;
     top: 400px;
     right: 50px;
 }
 
-.benefitThree{
-    color: white;
+.titleThree{
+    position: absolute;
     top: 100px;
-    left: 500px;
+    left: 40%;
 }
