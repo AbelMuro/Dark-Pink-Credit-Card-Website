@@ -91,7 +91,7 @@ function Animation() {
                 <p className={styles.titleSix}> Cashback on every purchase</p>
                 <p className={styles.titleSeven}> No credit check required!</p>
             </main>
-            <Benefits ref={creditCardRef}/> 
+            <Benefits creditCard={styles.creditCard} ref={creditCardRef}/> 
         </>
 
     )

@@ -1,20 +1,20 @@
-import React, { useEffect, useRef, forwardRef } from 'react';
+import React, { useEffect, useRef} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css'
 
 
-//finally understand this, the whole point of forwardRef
-//is for the parent component to pass down an empty ref 
-//to the child component, then the child component will assign
-//that ref to an element, then the parent component can manipulate
-//that element
-const Benefits = forwardRef((props, ref) => {
-    const textAnimation = useRef(null);
+function Benefits(props) {
+    const textAnimation = useRef();
+    const q = gsap.utils.selector(textAnimation)
     gsap.registerPlugin(ScrollTrigger);
 
+    //this is where i left off. i might start with photoshoping the next image that will appear
+    //or will continue the animation that i started in the parent component
     useEffect(() => {
-        
+        gsap.timeline({scrollTrigger: {
+            trigger: "." + props.creditCard
+        }})
     })
 
 
@@ -26,15 +26,15 @@ const Benefits = forwardRef((props, ref) => {
             scrub: 1,
             markers: true
         }})
-        .from("." + styles.benefitOne, {
+        .from(q("." + styles.benefitOne), {
             opacity: 0,
             duration: 0.8
         })
-        .from("." + styles.benefitTwo, {
+        .from(q("." + styles.benefitTwo), {
             opacity: 0,
             duration: 0.8
         })
-        .from("." + styles.benefitThree, {
+        .from(q("." + styles.benefitThree), {
             opacity: 0,
             duration: 0.8
         })
@@ -42,13 +42,12 @@ const Benefits = forwardRef((props, ref) => {
 
     return(            
        <section className={styles.container} ref={textAnimation}>
-            <p className={styles.benefitOne} ref={ref}>15% cash back on all purchases</p>
+            <p className={styles.benefitOne}>15% cash back on all purchases</p>
             <p className={styles.benefitTwo}>10% discount on all purchases</p>
             <p className={styles.benefitThree}> $100 gift upon signing up!</p>
        </section>   
     )
-
-})
+};
 
 
 
