@@ -4,12 +4,14 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css'
 
 
-//this is where i left off..
-//trying pass down the ref of a DOM element
+//finally understand this, the whole point of forwardRef
+//is for the parent component to pass down an empty ref 
+//to the child component, then the child component will assign
+//that ref to an element, then the parent component can manipulate
+//that element
 const Benefits = forwardRef((props, ref) => {
     const textAnimation = useRef(null);
     gsap.registerPlugin(ScrollTrigger);
-    console.log(ref);
 
     useEffect(() => {
         
@@ -40,7 +42,7 @@ const Benefits = forwardRef((props, ref) => {
 
     return(            
        <section className={styles.container} ref={textAnimation}>
-            <p className={styles.benefitOne}>15% cash back on all purchases</p>
+            <p className={styles.benefitOne} ref={ref}>15% cash back on all purchases</p>
             <p className={styles.benefitTwo}>10% discount on all purchases</p>
             <p className={styles.benefitThree}> $100 gift upon signing up!</p>
        </section>   

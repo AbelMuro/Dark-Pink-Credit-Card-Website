@@ -9,7 +9,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 function Animation() {
     const creditCardAnimation = useRef();
-    const creditCardRef = useRef("1");
+    const creditCardRef = useRef();
     const q = gsap.utils.selector(creditCardAnimation);
     gsap.registerPlugin(ScrollTrigger);
 
@@ -75,12 +75,14 @@ function Animation() {
             rotation: 360,
             duration: 0.6
         }, 0)
+
+        console.log(creditCardRef.current);
     },[]);
 
     return(
         <>
             <main className={styles.container} ref={creditCardAnimation}> 
-                <img src={creditCard} className={styles.creditCard} ref={creditCardRef}/>
+                <img src={creditCard} className={styles.creditCard}/>
                 <p className={styles.titleOne}> Such a beautifull card</p>
                 <p className={styles.titleTwo}> Such a sexy card</p>
                 <p className={styles.titleThree}> The Dark Pink Mastercard!</p>
