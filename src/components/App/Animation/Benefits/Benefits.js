@@ -9,12 +9,19 @@ function Benefits(props) {
     const q = gsap.utils.selector(textAnimation)
     gsap.registerPlugin(ScrollTrigger);
 
-    //this is where i left off. i might start with photoshoping the next image that will appear
-    //or will continue the animation that i started in the parent component
     useEffect(() => {
         gsap.timeline({scrollTrigger: {
-            trigger: "." + props.creditCard
+            trigger: "." + styles.container,
+            start: "60% 40%",
+            end: "90% 50%",
+            scrub: 1,
+            markers: true
         }})
+        .to("." + props.creditCard, {
+            x: 350,
+            transform: "rotate(360deg)",
+            duration: 0.9,
+        })
     })
 
 
@@ -24,7 +31,7 @@ function Benefits(props) {
             start: "10% 40%",
             end: "30% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from(q("." + styles.benefitOne), {
             opacity: 0,

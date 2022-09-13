@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from 'react';
 import Benefits from './Benefits';
+import MoreBenefits from './MoreBenefits';
 import creditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 import {gsap} from 'gsap';
@@ -92,6 +93,7 @@ function Animation() {
                 <p className={styles.titleSeven}> No credit check required!</p>
             </main>
             <Benefits creditCard={styles.creditCard} ref={creditCardRef}/> 
+            <MoreBenefits />
         </>
 
     )
