@@ -7,3 +7,49 @@
     height: 100vh;
     position: relative;
 }
+
+.benefitOne::before, .benefitTwo::before, .benefitThree::before{
+    content: "";
+    display: list-item;
+    position: absolute;
+}
+
+
+.benefitOne, .benefitTwo, .benefitThree{
+    position: absolute;
+    color: white;
+    font-family: 'Combo', cursive;
+    font-size: 2.3rem;
+}
+
+.benefitOne{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+.benefitTwo{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.benefitThree{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+}
+
+.benefitTitle, .benefitDesc{
+    color: white;
+    font-family: 'Combo', cursive;
+}
+
+.benefitTitle{
+    font-size: 3.0rem;
+    text-decoration: underline;
+}
+
+.benefitDesc{
+    font-size: 2.3rem;
+}

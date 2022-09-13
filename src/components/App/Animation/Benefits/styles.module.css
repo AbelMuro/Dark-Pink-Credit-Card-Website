@@ -8,6 +8,12 @@
     position: relative;
 }
 
+.benefitOne::before, .benefitTwo::before, .benefitThree::before{
+    content: "";
+    display: list-item;
+    position: absolute;
+}
+
 .benefitOne, .benefitTwo, .benefitThree{
     position: absolute;
     color: white;
@@ -24,11 +30,25 @@
 .benefitTwo{
     position: absolute;
     top: 40%;
-    right: 11%;
+    right: 12%;
 }
 
 .benefitThree{
     position: absolute;
     top: 60%;
-    right: 13%;
+    right: 17%;
+}
+
+.benefitTitle, .benefitDesc{
+    color: white;
+    font-family: 'Combo', cursive;
+}
+
+.benefitTitle{
+    font-size: 3.0rem;
+    text-decoration: underline;
+}
+
+.benefitDesc{
+    font-size: 2.3rem;
 }

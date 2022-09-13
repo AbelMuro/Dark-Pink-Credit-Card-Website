@@ -76,8 +76,6 @@ function Animation() {
             rotation: 360,
             duration: 0.6
         }, 0)
-
-        console.log(creditCardRef.current);
     },[]);
 
     return(
@@ -92,8 +90,8 @@ function Animation() {
                 <p className={styles.titleSix}> Cashback on every purchase</p>
                 <p className={styles.titleSeven}> No credit check required!</p>
             </main>
-            <Benefits creditCard={styles.creditCard} ref={creditCardRef}/> 
-            <MoreBenefits />
+            <Benefits creditCard={styles.creditCard}/> 
+            <MoreBenefits creditCard={styles.creditCard}/>
         </>
 
     )

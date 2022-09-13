@@ -15,13 +15,17 @@ function Benefits(props) {
             start: "60% 40%",
             end: "90% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .to("." + props.creditCard, {
-            x: 350,
+            x: 300,
             transform: "rotate(360deg)",
             duration: 0.9,
-        })
+        }, 0)
+        .to("." + props.creditCard, {
+            scale: 1.2,
+            duration: 0.9,
+        }, 0)
     })
 
 
@@ -29,7 +33,7 @@ function Benefits(props) {
         gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
             start: "10% 40%",
-            end: "30% 50%",
+            end: "60% 50%",
             scrub: 1,
             markers: false
         }})
@@ -49,9 +53,30 @@ function Benefits(props) {
 
     return(            
        <section className={styles.container} ref={textAnimation}>
-            <p className={styles.benefitOne}>15% cash back on all purchases</p>
-            <p className={styles.benefitTwo}>10% discount on all purchases</p>
-            <p className={styles.benefitThree}> $100 gift upon signing up!</p>
+            <div className={styles.benefitOne}>
+                <h2 className={styles.benefitTitle}>
+                    15% CASH BACK
+                </h2>
+                <p className={styles.benefitDesc}>
+                    15% cash back on all purchases
+                </p>
+            </div>
+            <div className={styles.benefitTwo}>
+                <h2 className={styles.benefitTitle}>
+                    10% DISCOUNT
+                </h2>
+                <p className={styles.benefitDesc}>
+                    10% discount on all purchases
+                </p>
+            </div>
+            <div className={styles.benefitThree}>
+                <h1 className={styles.benefitTitle}>
+                    $100 GIFT
+                </h1>
+                <p className={styles.benefitDesc}> 
+                    $100 gift upon signing up!
+                </p>
+            </div>   
        </section>   
     )
 };
