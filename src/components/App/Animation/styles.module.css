@@ -1,20 +1,15 @@
-.introOne, .introTwo{
+.container{
     background-color: #232323;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
     height: 100vh;
-
 }
 
-.introOne{
+.container{
     position: relative;
     z-index: 1;
     background-image: url("./images/dark pink background.png");
-}
-
-.introTwo{
-    background-image: url("./images/dark pink background reverse.png");
 }
 
 .creditCard{
@@ -27,27 +22,46 @@
     border-radius: 20px;
 }
 
-.titleOne, .titleTwo, .titleThree{
+.titleOne, .titleTwo, .titleThree, 
+.titleFour, .titleFive, .titleSix, .titleSeven{
+    position: absolute;
     color: white;
     font-family: 'Combo', cursive;
     font-size: 2.3rem;
 }
 
 .titleOne{
-    position: absolute;
     top: 400px;
     left: 50px;
 }
 
 .titleTwo{
-    position: absolute;
     width: 300px;
     top: 400px;
     right: 50px;
 }
 
 .titleThree{
-    position: absolute;
     top: 100px;
     left: 40%;
+}
+
+.titleFour{
+    top: 600px;
+    right: 20%;
+}
+
+.titleFive {
+    top: 500px;
+    left: 20%;
+}
+
+.titleSix{
+    top: 200px;
+    left: 10%;
+}
+
+.titleSeven{
+    top: 200px;
+    right: 5%;
 }

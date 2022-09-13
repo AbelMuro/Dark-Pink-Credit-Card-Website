@@ -1,12 +1,12 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
-import Introduction from './Introduction';
+import Animation from './Animation';
 
 function App(){
     return(
         <> 
             <NavigationBar />
-            <Introduction/>
+            <Animation/>
         </>
     )
 
