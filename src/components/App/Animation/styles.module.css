@@ -3,12 +3,6 @@
 
 }
 
-/* 
-    the problem is that credit card is still part 
-    of the normal flow when you use position: sticky
-    so all the content gets pushed down to make space
-    for the credit card
-*/
 .creditCard{
     object-fit: contain;
     width: 400px;
@@ -17,4 +11,14 @@
     top: 230px;
     left: 40%;
     border-radius: 20px;
+}
+
+
+.container{
+    background-image: url("./dark\ pink\ background\ pink\ colors\ inverted.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: #ff4242;
+    height: 90vh;
 }

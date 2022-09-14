@@ -19,7 +19,7 @@ function MoreBenefits(props) {
         .to("." + props.creditCard, {
             position: "sticky",
             transform: "rotate(25deg)",
-            duration: 0.5
+            duration: 0.2
         }, 0)
     })
 

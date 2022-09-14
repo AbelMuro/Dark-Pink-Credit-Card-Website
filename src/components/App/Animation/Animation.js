@@ -39,7 +39,10 @@ function Animation() {
                 <Benefits creditCard={styles.creditCard}/> 
                 <MoreBenefits creditCard={styles.creditCard}/>
             </main>
-            <BlockAnimation />        
+            <BlockAnimation />  
+            <section className={styles.container}>
+
+            </section>      
         </>
 
 
