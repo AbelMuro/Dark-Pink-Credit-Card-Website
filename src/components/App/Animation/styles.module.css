@@ -1,66 +1,20 @@
-.container{
-    background-color: #232323;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-    height: 100vh;
-}
-
-.container{
+.mainContainer{
+    height: auto;
     position: relative;
-    z-index: 1;
-    background-image: url("./images/dark pink background.png");
 }
 
+/* 
+    the problem is that credit card is still part 
+    of the normal flow when you use position: sticky
+    so all the content gets pushed down to make space
+    for the credit card
+*/
 .creditCard{
     object-fit: contain;
     width: 400px;
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     top: 230px;
     left: 40%;
     border-radius: 20px;
-}
-
-.titleOne, .titleTwo, .titleThree, 
-.titleFour, .titleFive, .titleSix, .titleSeven{
-    position: absolute;
-    color: white;
-    font-family: 'Combo', cursive;
-    font-size: 2.3rem;
-}
-
-.titleOne{
-    top: 400px;
-    left: 50px;
-}
-
-.titleTwo{
-    width: 300px;
-    top: 400px;
-    right: 50px;
-}
-
-.titleThree{
-    top: 100px;
-    left: 40%;
-}
-
-.titleFour{
-    top: 600px;
-    right: 20%;
-}
-
-.titleFive {
-    top: 500px;
-    left: 20%;
-}
-
-.titleSix{
-    top: 200px;
-    left: 10%;
-}
-
-.titleSeven{
-    top: 200px;
-    right: 5%;
 }

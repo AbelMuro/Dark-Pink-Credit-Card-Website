@@ -1,0 +1,53 @@
+.container{
+    background-image: url("./images/dark pink background.png");    
+    background-color: #232323;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 100vh;
+    position: relative;
+}
+
+.titleOne, .titleTwo, .titleThree, 
+.titleFour, .titleFive, .titleSix, .titleSeven{
+    position: absolute;
+    color: white;
+    font-family: 'Combo', cursive;
+    font-size: 2.3rem;
+}
+
+.titleOne{
+    top: 400px;
+    left: 50px;
+}
+
+.titleTwo{
+    width: 300px;
+    top: 400px;
+    right: 50px;
+}
+
+.titleThree{
+    top: 100px;
+    left: 40%;
+}
+
+.titleFour{
+    top: 600px;
+    right: 20%;
+}
+
+.titleFive {
+    top: 500px;
+    left: 20%;
+}
+
+.titleSix{
+    top: 200px;
+    left: 10%;
+}
+
+.titleSeven{
+    top: 200px;
+    right: 5%;
+}

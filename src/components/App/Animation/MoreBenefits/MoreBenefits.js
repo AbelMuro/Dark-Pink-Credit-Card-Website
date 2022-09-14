@@ -14,13 +14,13 @@ function MoreBenefits(props) {
             start: "70% 40%",
             end: "80% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .to("." + props.creditCard, {
-            position: "static",
+            position: "sticky",
             transform: "rotate(25deg)",
             duration: 0.5
-        });
+        }, 0)
     })
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function MoreBenefits(props) {
             start: "10% 40%",
             end: "60% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from(q("." + styles.benefitOne), {
             opacity: 0,
