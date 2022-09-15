@@ -39,7 +39,7 @@ function FourCreditCardAnimation() {
     return(
         <main className={styles.container}>
             <h1 className={styles.title}>
-                DIFFERENT DESIGNS OF YOUR CHOICE!
+                DIFFERENT DESIGNS WITH SAME BENEFITS!
             </h1>
             <div className={styles.whiteBoxes}>
                 <img src={blackCreditCard} className={styles.creditCard} id={"cardOne"}/>
