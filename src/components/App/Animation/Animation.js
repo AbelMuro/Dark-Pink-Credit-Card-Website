@@ -2,13 +2,12 @@ import React, { useEffect} from 'react';
 import IntroAnimation from './IntroAnimation';
 import TextFadingInFromRight from './TextFadingInFromRight';
 import TextFadingInFromLeft from './TextFadingInFromLeft';
-import FourCreditCardAnimation from './FourCreditCardAnimation';
+import ThreeBoxFadingIn  from './ThreeBoxFadingIn';
 import CreditCardZoomIn from './CreditCardZoomIn';
 import creditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-
 
 
 function Animation() {
@@ -38,7 +37,7 @@ function Animation() {
                 <TextFadingInFromRight creditCard={styles.creditCard}/> 
                 <TextFadingInFromLeft creditCard={styles.creditCard}/>
             </main>
-            <FourCreditCardAnimation />  
+            <ThreeBoxFadingIn />  
             <CreditCardZoomIn />
         </>
 

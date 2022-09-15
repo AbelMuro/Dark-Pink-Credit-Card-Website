@@ -17,7 +17,6 @@ function TextFadingInFromLeft(props) {
             markers: false
         }})
         .to("." + props.creditCard, {
-            position: "sticky",
             transform: "rotate(25deg)",
         }, 0)
     })

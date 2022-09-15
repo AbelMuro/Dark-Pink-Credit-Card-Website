@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import colorfulCreditCard from './images/colorful Credit Card.png';
+import darkPinkCreditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 
 function CreditCardZoomIn() {
+    gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() =>{
         gsap.timeline({scrollTrigger:{
@@ -14,12 +15,13 @@ function CreditCardZoomIn() {
             markers: true
         }})
         .to("." + styles.creditCard, {
+            
         })
     })
 
     return(
         <section className={styles.container}>
-            <img src={colorfulCreditCard} className={styles.creditCard}/>
+            <img src={darkPinkCreditCard} className={styles.creditCard}/>
         </section>    
     )
 }

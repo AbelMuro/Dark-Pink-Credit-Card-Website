@@ -1,10 +1,9 @@
 .container{
-    background-image: url("./images/dark pink background pink colors inverted.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
-    background-color: #ff4242;
-    height: 90vh;
+    background-color: #232323;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

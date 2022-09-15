@@ -1,12 +1,17 @@
 .mainContainer{
-    height: auto;
+    background-image: url("./images/dark pink background long.png");
+    background-color: #232323;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    height: 320vh;
 
 }
 
 .creditCard{
     object-fit: contain;
     width: 400px;
-    position: fixed;
+    position: sticky;
     z-index: 1;
     top: 230px;
     left: 40%;

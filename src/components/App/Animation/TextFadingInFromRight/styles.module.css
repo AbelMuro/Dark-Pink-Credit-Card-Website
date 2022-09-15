@@ -1,9 +1,4 @@
 .container{
-    background-image: url("./images/dark pink background reverse.png");
-    background-color: #232323;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
     height: 100vh;
     position: relative;
 }
