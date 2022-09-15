@@ -17,7 +17,7 @@ function FourCreditCardAnimation() {
             start: "40% 40%",
             end: "60% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from(q("#boxOne"), {
             opacity: 0,

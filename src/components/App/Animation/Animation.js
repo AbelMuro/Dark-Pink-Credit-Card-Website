@@ -3,7 +3,8 @@ import IntroAnimation from './IntroAnimation';
 import TextFadingInFromRight from './TextFadingInFromRight';
 import TextFadingInFromLeft from './TextFadingInFromLeft';
 import ThreeBoxFadingIn  from './ThreeBoxFadingIn';
-import CreditCardZoomIn from './CreditCardZoomIn';
+import NoAnnualFeeAnimation from './NoAnnualFeeAnimation';
+import ImagesFadingInFromSide from './ImagesFadingInFromSides';
 import creditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 import {gsap} from 'gsap';
@@ -38,7 +39,8 @@ function Animation() {
                 <TextFadingInFromLeft creditCard={styles.creditCard}/>
             </main>
             <ThreeBoxFadingIn />  
-            <CreditCardZoomIn />
+            <NoAnnualFeeAnimation />
+            <ImagesFadingInFromSide/>
         </>
 
 
