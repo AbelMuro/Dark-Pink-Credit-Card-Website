@@ -1,36 +1,29 @@
-import React, { useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
-
-function Benefits(props) {
+function TextFadingInFromLeft(props) {
     const textAnimation = useRef();
-    const q = gsap.utils.selector(textAnimation)
+    const q = gsap.utils.selector(textAnimation);
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+        gsap.timeline({scrollTrigger:{
             trigger: "." + styles.container,
-            start: "60% 40%",
+            start: "80% 40%",
             end: "90% 50%",
             scrub: 1,
             markers: false
         }})
         .to("." + props.creditCard, {
-            x: 300,
-            transform: "rotate(360deg)",
-            duration: 0.9,
-        }, 0)
-        .to("." + props.creditCard, {
-            scale: 1.2,
-            duration: 0.9,
+            position: "sticky",
+            transform: "rotate(25deg)",
         }, 0)
     })
 
-
     useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+        gsap.timeline({scrollTrigger:{
             trigger: "." + styles.container,
             start: "10% 40%",
             end: "60% 50%",
@@ -51,36 +44,34 @@ function Benefits(props) {
         })
     })
 
-    return(            
-       <section className={styles.container} ref={textAnimation}>
+    return(
+        <main className={styles.container} ref={textAnimation}>
             <div className={styles.benefitOne}>
                 <h2 className={styles.benefitTitle}>
-                    15% CASH BACK
+                    MADE WITH TITANIUM
                 </h2>
                 <p className={styles.benefitDesc}>
-                    15% cash back on all purchases
+                    This card will never break!
                 </p>
             </div>
             <div className={styles.benefitTwo}>
                 <h2 className={styles.benefitTitle}>
-                    10% DISCOUNT
+                    SLICK DESIGN
                 </h2>
                 <p className={styles.benefitDesc}>
-                    10% discount on all purchases
+                    Be the envy with this card!
                 </p>
             </div>
             <div className={styles.benefitThree}>
-                <h1 className={styles.benefitTitle}>
-                    $100 GIFT
-                </h1>
-                <p className={styles.benefitDesc}> 
-                    $100 gift upon signing up!
+                <h2 className={styles.benefitTitle}>
+                    SHINY
+                </h2>
+                <p className={styles.benefitDesc}>
+                    This card will emit a glow in the sun!
                 </p>
-            </div>   
-       </section>   
+            </div>
+        </main>
     )
-};
+}
 
-
-
-export default Benefits;
+export default TextFadingInFromLeft;

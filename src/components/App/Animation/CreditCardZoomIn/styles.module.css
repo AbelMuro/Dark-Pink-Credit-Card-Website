@@ -1,0 +1,17 @@
+.container{
+    background-image: url("./images/dark pink background pink colors inverted.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: #ff4242;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creditCard{
+    object-fit: contain;
+    width: 300px;
+    border-radius: 10px;
+}

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import styles from './styles.module.css';
 import blackCreditCard from './images/black credit card.png';
 import colorfulCreditCard from './images/colorful credit card.png';
@@ -7,7 +7,7 @@ import darkPinkCreditCard from './images/dark pink credit card.png';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
-function BlockAnimation() {
+function FourCreditCardAnimation() {
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function BlockAnimation() {
             start: "40% 40%",
             end: "60% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from("#cardOne", {
             opacity: 0,
@@ -43,6 +43,7 @@ function BlockAnimation() {
             </h1>
             <div className={styles.whiteBoxes}>
                 <img src={blackCreditCard} className={styles.creditCard} id={"cardOne"}/>
+                <h3 className={styles.cardTitle}>DARK CARD</h3>
                 <p className={styles.desc}>
                     Slick design with dark features!
                     Into the Goth subculture? then this card 
@@ -52,6 +53,7 @@ function BlockAnimation() {
             </div>   
             <div className={styles.whiteBoxes}>
                  <img src={colorfulCreditCard} className={styles.creditCard} id={"cardTwo"}/>
+                 <h3 className={styles.cardTitle}> COLORFUL CARD</h3>
                  <p className={styles.desc}>
                     Be the envy with this majestic card!
                     Colorful all year round! Your friends will 
@@ -62,15 +64,18 @@ function BlockAnimation() {
             </div>             
             <div className={styles.whiteBoxes}>
                 <img src={pinkGlitterCreditCard} className={styles.creditCard} id={"cardThree"}/>
+                <h3 className={styles.cardTitle}>GLITTER CARD</h3>
                 <p className={styles.desc}>
                     Show off that glitter to your friends 
                     with this newly design glitter card.
                     It is made of real titanium with 
-                    strawberry scented glitter
+                    strawberry scented glitter. For 
+                    Diva's only!
                 </p>
             </div>
             <div className={styles.whiteBoxes}>
                 <img src={darkPinkCreditCard} className={styles.creditCard} id={"cardFour"}/>
+                <h3 className={styles.cardTitle}>DARK PINK CARD</h3>
                 <p className={styles.desc}>
                     Our classic dark pink card!
                     This card never gets old.
@@ -82,4 +87,4 @@ function BlockAnimation() {
     )
 }
 
-export default BlockAnimation;
+export default FourCreditCardAnimation;

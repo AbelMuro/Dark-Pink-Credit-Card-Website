@@ -1,8 +1,9 @@
-import React, {useRef, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import IntroAnimation from './IntroAnimation';
-import Benefits from './Benefits';
-import MoreBenefits from './MoreBenefits';
-import BlockAnimation from './BlockAnimation';
+import TextFadingInFromRight from './TextFadingInFromRight';
+import TextFadingInFromLeft from './TextFadingInFromLeft';
+import FourCreditCardAnimation from './FourCreditCardAnimation';
+import CreditCardZoomIn from './CreditCardZoomIn';
 import creditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 import {gsap} from 'gsap';
@@ -23,11 +24,9 @@ function Animation() {
         .to("." + styles.creditCard, {
             transform: "scale(1.2, 1.2)",
             x: -350,
-            duration: 0.6
         }, 0)
         .to("." + styles.creditCard, {
             rotation: 360,
-            duration: 0.6
         }, 0)
     },[]);
 
@@ -36,13 +35,11 @@ function Animation() {
             <main className={styles.mainContainer}>
                 <img src={creditCard} className={styles.creditCard}/> 
                 <IntroAnimation />   
-                <Benefits creditCard={styles.creditCard}/> 
-                <MoreBenefits creditCard={styles.creditCard}/>
+                <TextFadingInFromRight creditCard={styles.creditCard}/> 
+                <TextFadingInFromLeft creditCard={styles.creditCard}/>
             </main>
-            <BlockAnimation />  
-            <section className={styles.container}>
-
-            </section>      
+            <FourCreditCardAnimation />  
+            <CreditCardZoomIn />
         </>
 
 

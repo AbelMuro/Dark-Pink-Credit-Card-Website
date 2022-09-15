@@ -7,46 +7,35 @@
     height: 100vh;
 }
 
-.titleOne, .titleTwo, .titleThree, 
-.titleFour, .titleFive, .titleSix, .titleSeven{
+.title{
     position: absolute;
+    top: 100px;
+    left: 30%;
     color: white;
     font-family: 'Combo', cursive;
+    font-size: 4.3rem;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+@keyframes hoveringAnimation {
+    from {transform: translateY(-10px)}
+    to {transform: translateY(10px)}
+}
+
+.animation{
+    animation-name: hoveringAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;   
+}
+
+.scrollDown{
+    color: white;
+    font-family: 'Combo', cursive;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
     font-size: 2.3rem;
 }
 
-.titleOne{
-    top: 400px;
-    left: 50px;
-}
 
-.titleTwo{
-    width: 300px;
-    top: 400px;
-    right: 50px;
-}
-
-.titleThree{
-    top: 100px;
-    left: 40%;
-}
-
-.titleFour{
-    top: 600px;
-    right: 20%;
-}
-
-.titleFive {
-    top: 500px;
-    left: 20%;
-}
-
-.titleSix{
-    top: 200px;
-    left: 10%;
-}
-
-.titleSeven{
-    top: 200px;
-    right: 5%;
-}

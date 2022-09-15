@@ -7,7 +7,6 @@
     display: grid;
     align-content: space-evenly;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: 300px 300px;
     height: 100vh;
 }
 
@@ -22,10 +21,11 @@
     grid-column: 1/5;
     text-align: center;
     padding: 2.2rem;
+    margin-bottom: 2.2rem;
 }
 
 .desc{
-    width: 150px;
+    width: 160px;
     color: black;
     font-size: 1.2rem;
 }
@@ -34,13 +34,22 @@
     padding: 1.2rem;
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     width: 170px;
-    height: height;
+    height: 258px;
     background-color: white;
     border-radius: 30px;
     margin: auto;
+}
+
+.cardTitle{
+    font-family: 'Combo', cursive;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .creditCard{
@@ -48,6 +57,6 @@
     object-fit: contain;
     width: 240px;
     border-radius: 30px;
-    top: -100%;
-    left: -20%;
+    top: -60%;
+    left: -10%;
 }
