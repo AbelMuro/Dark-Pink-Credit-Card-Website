@@ -1,0 +1,57 @@
+.container{
+    background-color: purple;
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 250vh;
+}
+
+.travelContainer, .graceContainer{
+    position: relative;
+    align-self: flex-start;
+}
+
+.cashBackContainer{
+    position: relative;
+    align-self: flex-end;
+}
+
+.image{
+    object-fit: contain;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.whiteBoxOne, .whiteBoxTwo, .whiteBoxThree{
+    width: 300px;
+    background-color: white;
+    position: absolute;
+}
+
+.whiteBoxOne, .whiteBoxTwo, .whiteBoxThree {
+    padding: 1.2rem;
+    border-radius: 20px;
+}
+
+.whiteBoxOne, .whiteBoxThree{
+    top: 50%;
+    right: -60%;
+}
+
+.whiteBoxTwo{
+    top: 50%;
+    left: -60%;
+}
+
+.title, .desc {
+    font-family: 'Combo', cursive;
+}
+
+.title{
+    font-size: 2.3rem;
+}
+
+.desc{
+    font-size: 1.5rem;
+}

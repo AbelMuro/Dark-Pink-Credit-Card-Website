@@ -15,7 +15,7 @@ function NoAnnualFeeAnimation() {
             start: "0% 60%",
             end: "60% 70%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from(q("." + styles.creditCard), {
             y: -300,

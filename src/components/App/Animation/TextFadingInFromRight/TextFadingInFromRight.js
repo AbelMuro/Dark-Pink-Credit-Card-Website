@@ -12,19 +12,17 @@ function TextFadingInFromRight(props) {
     useEffect(() => {
         gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
-            start: "60% 40%",
-            end: "90% 50%",
+            start: "100% 40%",
+            end: "110% 50%",
             scrub: 1,
             markers: false
         }})
         .to("." + props.creditCard, {
             x: 300,
             transform: "rotate(360deg)",
-            duration: 0.9,
         }, 0)
         .to("." + props.creditCard, {
             scale: 1.2,
-            duration: 0.9,
         }, 0)
     })
 
