@@ -27,14 +27,26 @@ function ImagesFadingInFromSide() {
         .from(one("." + styles.whiteBoxOne), {
             opacity: 0,
             x: 100
-        })
+        },0)
+        .from(one("." + styles.image), {
+            opacity: 0,
+            x: -100
+        },0)
         .from(two("." + styles.whiteBoxTwo), {
             opacity: 0,
             x: -100
+        }, 1)
+        .from(two("." + styles.image), {
+            opacity: 0,
+            x: 100,
         })
         .from(three("." + styles.whiteBoxThree), {
             opacity: 0,
             x: 100
+        })
+        .from(three("." + styles.image), {
+            opacity: 0,
+            x: -100
         })
 
     })
