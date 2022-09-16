@@ -9,26 +9,33 @@ import creditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useMediaQuery} from 'react-responsive';
 
 
 function Animation() {
+    const stopAnimation = useMediaQuery({query: "(max-width: 1215px)"});
+    console.log(stopAnimation);
     gsap.registerPlugin(ScrollTrigger);
+
     useEffect(() => {
-        gsap.timeline({scrollTrigger: {
-            trigger: "." + styles.mainContainer,
-            start: "5% 10%",
-            end: "10% 20%",
-            scrub: 1,
-            markers: false
-        }})
-        .to("." + styles.creditCard, {
-            transform: "scale(1.2, 1.2)",
-            x: -350,
-        }, 0)
-        .to("." + styles.creditCard, {
-            rotation: 360,
-        }, 0)
-    },[]);
+            gsap.timeline({scrollTrigger: {
+                trigger: "." + styles.mainContainer,
+                start: "5% 10%",
+                end: "10% 20%",
+                scrub: 1,
+                markers: false
+            }})
+            .to("." + styles.creditCard, {
+                    transform: "scale(1.2, 1.2)",
+                    x: -350,
+            }, 0)
+            .to("." + styles.creditCard, {
+                    rotation: 360,
+            }, 0)            
+
+    });
+
+
 
     return(
         <>
@@ -42,10 +49,7 @@ function Animation() {
             <NoAnnualFeeAnimation />
             <ImagesFadingInFromSide/>
         </>
-
-
     )
-
 }
 
 export default Animation;

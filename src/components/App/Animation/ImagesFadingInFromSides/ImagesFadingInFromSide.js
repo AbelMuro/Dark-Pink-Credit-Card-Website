@@ -39,15 +39,15 @@ function ImagesFadingInFromSide() {
         .from(two("." + styles.image), {
             opacity: 0,
             x: 100,
-        })
+        },1)
         .from(three("." + styles.whiteBoxThree), {
             opacity: 0,
             x: 100
-        })
+        },2)
         .from(three("." + styles.image), {
             opacity: 0,
             x: -100
-        })
+        },2)
 
     })
 

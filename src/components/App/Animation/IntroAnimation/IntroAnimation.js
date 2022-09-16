@@ -4,7 +4,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
-
+import {useMediaQuery} from 'react-responsive';
 
 function IntroAnimation(){
     const textAnimation = useRef();
@@ -15,11 +15,11 @@ function IntroAnimation(){
         gsap.timeline()
             .from(q("." + styles.title), {
                 opacity: 0,
-                top: -10,
+                y: -100,
                 duration: 1.2,
                 ease: "ease-in-out"
             })
-    },[]);
+    });
 
     return(
         <main className={styles.container} ref={textAnimation}> 

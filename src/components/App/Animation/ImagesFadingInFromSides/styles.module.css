@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 250vh;
+    padding-bottom: 400px;
 }
 
 .travelContainer, .graceContainer{

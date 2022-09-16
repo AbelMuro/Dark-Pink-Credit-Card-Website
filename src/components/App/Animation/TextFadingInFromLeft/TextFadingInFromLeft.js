@@ -18,6 +18,7 @@ function TextFadingInFromLeft(props) {
         }})
         .to("." + props.creditCard, {
             transform: "rotate(25deg)",
+            scale: 1.2
         }, 0)
     })
 

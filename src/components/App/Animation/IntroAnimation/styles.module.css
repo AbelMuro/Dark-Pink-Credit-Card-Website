@@ -1,11 +1,16 @@
 .container{
-    height: 70vh;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    top: -100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .title{
-    position: absolute;
-    top: 100px;
-    left: 30%;
     color: white;
     font-family: 'Combo', cursive;
     font-size: 4.3rem;
@@ -27,10 +32,8 @@
 .scrollDown{
     color: white;
     font-family: 'Combo', cursive;
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
     font-size: 2.3rem;
 }
+
 
 

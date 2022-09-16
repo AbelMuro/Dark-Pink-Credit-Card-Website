@@ -4,16 +4,24 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
-    height: 320vh;
-
+    height: 2652px;
 }
 
 .creditCard{
+    display: block;
+    width: 400px;    
+    margin: auto;
     object-fit: contain;
-    width: 400px;
     position: sticky;
     z-index: 1;
-    top: 230px;
-    left: 40%;
+    top: 260px;
     border-radius: 20px;
+}
+
+@media(max-width: 1195px) {
+    .mainContainer{
+        background-size: cover;
+        background-position: center;
+    }
+
 }

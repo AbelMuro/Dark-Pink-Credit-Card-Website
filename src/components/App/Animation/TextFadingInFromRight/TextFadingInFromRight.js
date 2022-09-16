@@ -2,6 +2,7 @@ import React, { useEffect, useRef} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css'
+import { useMediaQuery } from 'react-responsive';
 
 
 function TextFadingInFromRight(props) {
@@ -9,6 +10,7 @@ function TextFadingInFromRight(props) {
     const q = gsap.utils.selector(textAnimation)
     gsap.registerPlugin(ScrollTrigger);
 
+    
     useEffect(() => {
         gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
@@ -23,7 +25,7 @@ function TextFadingInFromRight(props) {
         }, 0)
         .to("." + props.creditCard, {
             scale: 1.2,
-        }, 0)
+        }, 0)            
     })
 
 
