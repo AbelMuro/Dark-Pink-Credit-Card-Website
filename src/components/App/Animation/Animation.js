@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useLayoutEffect} from 'react';
 import IntroAnimation from './IntroAnimation';
 import TextFadingInFromRight from './TextFadingInFromRight';
 import TextFadingInFromLeft from './TextFadingInFromLeft';
@@ -13,30 +13,39 @@ import {useMediaQuery} from 'react-responsive';
 
 
 function Animation() {
-    const stopAnimation = useMediaQuery({query: "(max-width: 1210px)"});
+    const mobile = useMediaQuery({query: "(max-width: 1210px)"});
     gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let tl = gsap.timeline({scrollTrigger: {
             trigger: "." + styles.mainContainer,
             start: "10% 20%",
-            end: "20% 10%",
+            end: "95% 10%",
             scrub: 0.7,
-            markers: false,
+            markers: false
         }})
-        
-        if(!stopAnimation){
+        if(!mobile){
             tl.to("." + styles.creditCard, {
                 position: "sticky",
-                transform: "scale(1.2, 1.2)",
-                x: -350,
+                transform: "scale(1.2, 1.2) translateX(-350px)",
             }, 0)
             tl.to("." + styles.creditCard, {
                 rotation: 360,
-            }, 0)                
+            }, 0)
+            tl.to("." + styles.creditCard, {
+                x: 300,
+                transform: "rotate(360deg)",
+            }, 1)
+            tl.to("." + styles.creditCard, {
+                scale: 1.2,
+            }, 1)
+            tl.to("." + styles.creditCard, {
+                transform: "rotate(25deg)",
+                scale: 1.2
+            }, 2)                       
         }
         return () => {
-            tl.kill()
+            tl.scrollTrigger.kill();
         }
     });
 
@@ -47,12 +56,12 @@ function Animation() {
             <main className={styles.mainContainer}>
                 <img src={creditCard} className={styles.creditCard}/> 
                 <IntroAnimation />   
-                <TextFadingInFromRight creditCard={styles.creditCard}/> 
-                <TextFadingInFromLeft creditCard={styles.creditCard}/>
+                <TextFadingInFromRight /> 
+                <TextFadingInFromLeft />
             </main>
             <ThreeBoxFadingIn />  
             <NoAnnualFeeAnimation />
-            <ImagesFadingInFromSide/>
+            <ImagesFadingInFromSide />
         </>
     )
 }

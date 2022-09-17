@@ -1,36 +1,43 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useLayoutEffect, useRef, memo} from 'react';
 import styles from './styles.module.css';
 import family from './images/family.jpg';
 import handsWithCards from './images/hands holding cards.png';
 import guyHoldingCard from './images/guy holding card.png';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {useMediaQuery} from 'react-responsive';
 
 function FourCreditCardAnimation() {
+    const mobile = useMediaQuery({query: "(max-width: 540px)"})
     const boxAnimation = useRef();
     const q = gsap.utils.selector(boxAnimation);
     gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+    useLayoutEffect(() => {
+        const tl = gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
-            start: "40% 40%",
-            end: "60% 50%",
+            start: mobile ? "300px 50%" : "200px 50%",
+            end: mobile ? "900px 40%" : "500px 40%",
             scrub: 1,
             markers: false
-        }})
-        .from(q("#boxOne"), {
-            opacity: 0,
-            y: 100,
+        }})            
+        tl.to(q("#boxOne"), {
+            opacity: 1,
+            y: 0,
         })
-        .from(q("#boxTwo"), {
-            opacity: 0,
-            y: 100,
+        tl.to(q("#boxTwo"), {
+            opacity: 1,
+            y: 0,
         })
-        .from(q("#boxThree"), {
-            opacity: 0,
-            y: 100
+        tl.to(q("#boxThree"), {
+            opacity: 1,
+            y: 0
         })
+
+        return () => {
+            tl.scrollTrigger.kill();
+        }
+
     });
 
     return(
@@ -65,4 +72,4 @@ function FourCreditCardAnimation() {
     )
 }
 
-export default FourCreditCardAnimation;
+export default memo(FourCreditCardAnimation);

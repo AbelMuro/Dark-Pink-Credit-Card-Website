@@ -1,10 +1,9 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, memo} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
-import {useMediaQuery} from 'react-responsive';
 
 function IntroAnimation(){
     const textAnimation = useRef();
@@ -32,4 +31,4 @@ function IntroAnimation(){
     )
 }
 
-export default IntroAnimation;
+export default memo(IntroAnimation);

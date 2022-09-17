@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useLayoutEffect, useRef , memo} from 'react';
 import styles from './styles.module.css';
 import travelImage from './images/travel image.jpg';
 import cashBackImage from './images/cash back image.png';
@@ -16,39 +16,42 @@ function ImagesFadingInFromSide() {
     const three = gsap.utils.selector(boxAnimationThree);
     gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+    useLayoutEffect(() => {
+        const tl = gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
-            start: "10% 40%",
-            end: "90% 50%",
+            start: "5% 40%",
+            end: "70% 50%",
             scrub: 1,
             markers: false
         }})
-        .from(one("." + styles.whiteBoxOne), {
+        tl.from(one("." + styles.whiteBoxOne), {
             opacity: 0,
             x: 100
         },0)
-        .from(one("." + styles.image), {
+        tl.from(one("." + styles.image), {
             opacity: 0,
             x: -100
         },0)
-        .from(two("." + styles.whiteBoxTwo), {
+        tl.from(two("." + styles.whiteBoxTwo), {
             opacity: 0,
             x: -100
         }, 1)
-        .from(two("." + styles.image), {
+        tl.from(two("." + styles.image), {
             opacity: 0,
             x: 100,
-        },1)
-        .from(three("." + styles.whiteBoxThree), {
+        }, 1)
+        tl.from(three("." + styles.whiteBoxThree), {
             opacity: 0,
             x: 100
-        },2)
-        .from(three("." + styles.image), {
+        }, 2)
+        tl.from(three("." + styles.image), {
             opacity: 0,
             x: -100
-        },2)
+        }, 2)
 
+        return () => {
+            tl.scrollTrigger.kill();
+        }
     })
 
     return(
@@ -70,7 +73,7 @@ function ImagesFadingInFromSide() {
                 <img src={cashBackImage} className={styles.image}/>
                 <div className={styles.whiteBoxTwo}>     
                     <h2 className={styles.title}>
-                        CASH BACK WITH REWARDS
+                        REWARDS!
                     </h2>
                     <p className={styles.desc}>
                         Every time you purchase something with this card
@@ -97,4 +100,4 @@ function ImagesFadingInFromSide() {
     )
 }
 
-export default ImagesFadingInFromSide;
+export default memo(ImagesFadingInFromSide);

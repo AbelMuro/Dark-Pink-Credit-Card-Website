@@ -15,15 +15,18 @@
 .creditCard{
     object-fit: contain;
     width: 500px;
-    border-radius: 10px;
+    border-radius: 20px;
+    transform: translateY(-300px) rotate(45deg) scale(0.5 , 0.5);
 }
 .title{
+    opacity: 0;
     color: white;
     font-family: 'Combo', cursive;
     font-size: 3.4rem;
 }
 
 .desc {
+    opacity: 0;
     color: black;
     background-color: white;
     border-radius: 20px;

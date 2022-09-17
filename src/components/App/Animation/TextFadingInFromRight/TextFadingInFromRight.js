@@ -1,4 +1,4 @@
-import React, { useEffect, useRef} from 'react';
+import React, { useLayoutEffect, useRef, memo} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './styles.module.css'
@@ -6,43 +6,21 @@ import { useMediaQuery } from 'react-responsive';
 
 
 function TextFadingInFromRight(props) {
-    const stopAnimation = useMediaQuery({query: "(max-width: 1210px)"});
+    const mobile = useMediaQuery({query: "(max-width: 1210px)"});
     const textAnimation = useRef();
     const q = gsap.utils.selector(textAnimation)
     gsap.registerPlugin(ScrollTrigger);
 
     
-    useEffect(() => {
-        let tl = gsap.timeline({scrollTrigger: {
-            trigger: "." + styles.container,
-            start: "100% 50%",
-            end: "110% 40%",
-            scrub: 0.7,
-            markers: false
-        }})
-
-        if(!stopAnimation){
-            tl.to("." + props.creditCard, {
-                x: 300,
-                transform: "rotate(360deg)",
-            }, 0)
-            tl.to("." + props.creditCard, {
-                scale: 1.2,
-            }, 0)             
-        }
-        return () => {
-            tl.kill()
-        }
-    })
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let tl = gsap.timeline({scrollTrigger:{
             trigger: "." + styles.container,
-            start: "30% 50%",
-            end: "80% 40%",
+            start: mobile ? "100px 50%" : "30% 50%",
+            end: mobile ? "500px 40%": "80% 40%",
             scrub: true,
-            markers: true
+            markers: false
         }})
         tl.to(q("." + styles.benefitOne), {
             opacity: 1,
@@ -58,7 +36,7 @@ function TextFadingInFromRight(props) {
         })  
 
         return () => {
-            tl.kill()
+            tl.scrollTrigger.kill();
         }
 
 
@@ -96,4 +74,4 @@ function TextFadingInFromRight(props) {
 
 
 
-export default TextFadingInFromRight;
+export default memo(TextFadingInFromRight);

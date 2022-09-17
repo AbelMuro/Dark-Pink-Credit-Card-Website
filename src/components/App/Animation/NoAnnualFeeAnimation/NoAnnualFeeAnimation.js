@@ -1,33 +1,40 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useLayoutEffect, useRef, memo} from 'react';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import darkPinkCreditCard from './images/dark pink credit card.png';
 import styles from './styles.module.css';
+import {useMediaQuery} from 'react-responsive';
+
 
 function NoAnnualFeeAnimation() {
+    const mobile = useMediaQuery({query: "(max-width: 650px)"})
     const creditAndTextAnimation = useRef();
     const q = gsap.utils.selector(creditAndTextAnimation);
     gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() =>{
-        gsap.timeline({scrollTrigger:{
+    useLayoutEffect(() =>{
+        const tl = gsap.timeline({scrollTrigger:{
             trigger: "." + styles.container,
-            start: "0% 60%",
-            end: "60% 70%",
+            start: mobile ? "0% 70%" : "0% 70%",
+            end: mobile ? "60% 60%" : "60% 60%" ,
             scrub: 1,
-            markers: false
+            markers: true
         }})
-        .from(q("." + styles.creditCard), {
-            y: -300,
-            rotate: 45,
-            scale: 0.5
+        tl.to(q("." + styles.creditCard), {
+            y: 0,
+            rotate: 0,
+            scale: mobile ? 0.5 : 1
         })
-        .from(q("." + styles.title), {
-            opacity: 0
+        tl.to(q("." + styles.title), {
+            opacity: 1
         })
-        .from(q("." + styles.desc), {
-            opacity: 0
+        tl.to(q("." + styles.desc), {
+            opacity: 1
         })
+
+        return () => {
+            tl.scrollTrigger.kill();
+        }
     })
 
     return(
@@ -44,4 +51,4 @@ function NoAnnualFeeAnimation() {
     )
 }
 
-export default NoAnnualFeeAnimation;
+export default memo(NoAnnualFeeAnimation);

@@ -28,20 +28,17 @@
     width: 300px;
     background-color: white;
     position: absolute;
-}
-
-.whiteBoxOne, .whiteBoxTwo, .whiteBoxThree {
     padding: 1.2rem;
     border-radius: 20px;
+    top: 50%;
+
 }
 
 .whiteBoxOne, .whiteBoxThree{
-    top: 50%;
     right: -60%;
 }
 
 .whiteBoxTwo{
-    top: 50%;
     left: -60%;
 }
 
@@ -55,4 +52,41 @@
 
 .desc{
     font-size: 1.5rem;
+}
+
+@media(max-width: 865px) {
+
+    .travelContainer {
+        align-self: center;
+    }
+    .whiteBoxOne{
+        top: initial;
+        right: 10px;
+        bottom: -130px;
+    }
+
+    .graceContainer {
+        align-self: center;
+    }
+    .whiteBoxTwo {
+        top: initial;
+        left: 30px;
+        bottom: -130px;
+    }
+
+    .cashBackContainer{
+        align-self: center;
+    }
+
+    .whiteBoxThree{
+        top: initial;
+        right: 10px;
+        bottom: -150px;
+    }
+}
+
+@media(max-width: 515px){
+    .image{
+        width: 400px;
+    }
 }

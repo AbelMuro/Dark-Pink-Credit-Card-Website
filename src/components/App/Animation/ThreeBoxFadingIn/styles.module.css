@@ -6,7 +6,7 @@
     display: grid;
     align-content: space-evenly;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    height: 100vh;
+    height: 950px;
 }
 
 .title, .desc{
@@ -30,8 +30,9 @@
 }
 
 .whiteBoxes{
+    transform: translateY(-100px);
+    opacity: 0;
     padding: 1.2rem;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -54,4 +55,31 @@
 .image{
     object-fit: contain;
     width: 100%;
+}
+
+
+
+
+@media (max-width: 1215px) {
+    .container{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        height: 1200px;
+    }
+    .title {
+        grid-column: 1/2;
+    }
+}
+
+@media (max-width: 540px ) {
+    .container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        height: auto;
+    }
+
+    .title{
+        grid-column: 1/1;
+    }
+    .whiteBoxes{
+        margin: 1.2rem auto 1.2rem auto;
+    }
 }
