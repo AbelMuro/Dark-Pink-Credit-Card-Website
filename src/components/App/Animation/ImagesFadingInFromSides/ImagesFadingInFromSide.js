@@ -22,7 +22,7 @@ function ImagesFadingInFromSide() {
             start: "10% 40%",
             end: "90% 50%",
             scrub: 1,
-            markers: true
+            markers: false
         }})
         .from(one("." + styles.whiteBoxOne), {
             opacity: 0,

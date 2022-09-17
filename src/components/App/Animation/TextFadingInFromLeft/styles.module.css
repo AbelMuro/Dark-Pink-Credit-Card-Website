@@ -1,6 +1,7 @@
 .container{
     height: 900px;
     position: relative;
+    top: 500px;
 
 }
 
@@ -12,6 +13,7 @@
 
 
 .benefitOne, .benefitTwo, .benefitThree{
+    opacity: 0;
     position: absolute;
     color: white;
     font-family: 'Combo', cursive;

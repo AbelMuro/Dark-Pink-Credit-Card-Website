@@ -6,49 +6,62 @@ import { useMediaQuery } from 'react-responsive';
 
 
 function TextFadingInFromRight(props) {
+    const stopAnimation = useMediaQuery({query: "(max-width: 1210px)"});
     const textAnimation = useRef();
     const q = gsap.utils.selector(textAnimation)
     gsap.registerPlugin(ScrollTrigger);
 
     
     useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+        let tl = gsap.timeline({scrollTrigger: {
             trigger: "." + styles.container,
-            start: "100% 40%",
-            end: "110% 50%",
-            scrub: 1,
+            start: "100% 50%",
+            end: "110% 40%",
+            scrub: 0.7,
             markers: false
         }})
-        .to("." + props.creditCard, {
-            x: 300,
-            transform: "rotate(360deg)",
-        }, 0)
-        .to("." + props.creditCard, {
-            scale: 1.2,
-        }, 0)            
+
+        if(!stopAnimation){
+            tl.to("." + props.creditCard, {
+                x: 300,
+                transform: "rotate(360deg)",
+            }, 0)
+            tl.to("." + props.creditCard, {
+                scale: 1.2,
+            }, 0)             
+        }
+        return () => {
+            tl.kill()
+        }
     })
 
 
     useEffect(() => {
-        gsap.timeline({scrollTrigger: {
+        let tl = gsap.timeline({scrollTrigger:{
             trigger: "." + styles.container,
-            start: "10% 40%",
-            end: "60% 50%",
-            scrub: 1,
-            markers: false
+            start: "30% 50%",
+            end: "80% 40%",
+            scrub: true,
+            markers: true
         }})
-        .from(q("." + styles.benefitOne), {
-            opacity: 0,
+        tl.to(q("." + styles.benefitOne), {
+            opacity: 1,
             duration: 0.8
         })
-        .from(q("." + styles.benefitTwo), {
-            opacity: 0,
+        tl.to(q("." + styles.benefitTwo), {
+            opacity: 1,
             duration: 0.8
         })
-        .from(q("." + styles.benefitThree), {
-            opacity: 0,
+        tl.to(q("." + styles.benefitThree), {
+            opacity: 1,
             duration: 0.8
-        })
+        })  
+
+        return () => {
+            tl.kill()
+        }
+
+
     })
 
     return(            

@@ -10,11 +10,13 @@
 .creditCard{
     display: block;
     width: 400px;    
-    margin: auto;
     object-fit: contain;
-    position: sticky;
+    position: absolute;
     z-index: 1;
     top: 260px;
+    margin: auto;
+    left: 0;
+    right: 0;
     border-radius: 20px;
 }
 

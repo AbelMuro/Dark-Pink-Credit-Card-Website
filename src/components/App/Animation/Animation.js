@@ -13,26 +13,31 @@ import {useMediaQuery} from 'react-responsive';
 
 
 function Animation() {
-    const stopAnimation = useMediaQuery({query: "(max-width: 1215px)"});
-    console.log(stopAnimation);
+    const stopAnimation = useMediaQuery({query: "(max-width: 1210px)"});
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
-            gsap.timeline({scrollTrigger: {
-                trigger: "." + styles.mainContainer,
-                start: "5% 10%",
-                end: "10% 20%",
-                scrub: 1,
-                markers: false
-            }})
-            .to("." + styles.creditCard, {
-                    transform: "scale(1.2, 1.2)",
-                    x: -350,
+        let tl = gsap.timeline({scrollTrigger: {
+            trigger: "." + styles.mainContainer,
+            start: "10% 20%",
+            end: "20% 10%",
+            scrub: 0.7,
+            markers: false,
+        }})
+        
+        if(!stopAnimation){
+            tl.to("." + styles.creditCard, {
+                position: "sticky",
+                transform: "scale(1.2, 1.2)",
+                x: -350,
             }, 0)
-            .to("." + styles.creditCard, {
-                    rotation: 360,
-            }, 0)            
-
+            tl.to("." + styles.creditCard, {
+                rotation: 360,
+            }, 0)                
+        }
+        return () => {
+            tl.kill()
+        }
     });
 
 
