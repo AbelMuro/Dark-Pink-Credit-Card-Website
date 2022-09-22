@@ -18,7 +18,7 @@ function NoAnnualFeeAnimation() {
             start: mobile ? "0% 70%" : "0% 70%",
             end: mobile ? "60% 60%" : "60% 60%" ,
             scrub: 1,
-            markers: true
+            markers: false
         }})
         tl.to(q("." + styles.creditCard), {
             y: 0,
