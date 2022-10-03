@@ -7,7 +7,7 @@ import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 
 function IntroAnimation(){
     const textAnimation = useRef();
-    const q = gsap.utils.selector(textAnimation);
+    const q = gsap.utils.selector(textAnimation);          
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {

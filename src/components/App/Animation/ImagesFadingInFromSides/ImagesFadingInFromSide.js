@@ -63,7 +63,7 @@ function ImagesFadingInFromSide() {
                         TRAVEL ANYWHERE
                     </h2>
                     <p className={styles.desc}>
-                        Take it to any country around the world
+                        Take it to any country in the world
                         and the US dollar will automatically be converted 
                         to the currency of the country that you use it in
                     </p>

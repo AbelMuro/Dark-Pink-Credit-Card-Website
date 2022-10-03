@@ -85,8 +85,26 @@
     }
 }
 
-@media(max-width: 515px){
+@media (max-width: 530px){
     .image{
-        width: 400px;
+        width: 330px;
+    }
+
+    .whiteBoxOne, .whiteBoxThree{
+        width: 200px;
+        bottom: -200px;
+    }
+
+    .whiteBoxTwo{
+        width: 200px;
+        bottom: -100px;
+    }
+
+    .title{
+        font-size: 1.9rem;
+    }
+    .desc{
+        font-size: 1.2rem;
     }
 }
+

@@ -32,3 +32,10 @@
         width:300px;
     }
 }
+
+
+@media(max-width: 440px){
+    .creditCard{
+        top: 280px;
+    }
+}
